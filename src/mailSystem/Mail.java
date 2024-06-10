@@ -1,10 +1,10 @@
 package mailSystem;
 
 public class Mail {
-    private String sender;
-    private String recipient;
-    private String subject;
-    private String body;
+    private final String sender;
+    private final String recipient;
+    private final String subject;
+    private final String body;
     private boolean isRead;
 
     public Mail(String sender,String recipient, String subject, String body){

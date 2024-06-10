@@ -6,9 +6,10 @@ public class Main {
     public static void main(String[] args) {
         MailSystem mailsystem = new MailSystem();
         Scanner scanner = new Scanner(System.in);
-
         boolean isLoggedIn = false;
         User currentUser = null;
+        String username = null;
+        String password = null;
 
         while (true){
             System.out.println("1. Sign Up");
@@ -21,9 +22,9 @@ public class Main {
             switch (choice){
                 case 1:
                     System.out.println("Enter Username: ");
-                    String username = scanner.nextLine();
+                    username = scanner.nextLine();
                     System.out.println("Enter Password: ");
-                    String password = scanner.nextLine();
+                    password = scanner.nextLine();
                     System.out.println("Enter EmailID: ");
                     String email = scanner.nextLine();
                     mailsystem.signUp(username, password, email);

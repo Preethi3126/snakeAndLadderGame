@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MailSystem {
-    private List<User> users;
-    private List<Mail> inbox;
-    private List<Mail> outbox;
-    private List<Mail> sent;
+    private final List<User> users;
+    private final List<Mail> inbox;
+    private final List<Mail> outbox;
+    private final List<Mail> sent;
 
     public MailSystem() {
         users = new ArrayList<>();

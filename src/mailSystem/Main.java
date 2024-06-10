@@ -8,8 +8,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean isLoggedIn = false;
         User currentUser = null;
-        String username = null;
-        String password = null;
+        String username;
+        String password;
 
         while (true){
             System.out.println("1. Sign Up");

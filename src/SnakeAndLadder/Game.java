@@ -12,6 +12,7 @@ public class Game {
         this.board = new Board(boardSize);
         this.players = players;
         this.dice = new Dice();
+        setupBoard();
 
     }
     public void setupBoard(){

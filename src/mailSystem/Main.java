@@ -38,7 +38,7 @@ public class Main {
                     if(mailsystem.signIn(username, password)){
                         System.out.println("Login Successfully!");
                         isLoggedIn = true;
-                        currentUser = mailsystem.getUser(username);
+                        currentUser = mailsystem.getUserByUsername(username);
                     }else {
                         System.out.println("Invalid username or password.");
                     }

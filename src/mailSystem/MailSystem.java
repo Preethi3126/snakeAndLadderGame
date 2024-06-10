@@ -28,6 +28,14 @@ public class MailSystem {
         }
         return false;
     }
+    public User getUserByUsername(String username) {
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
 
     public void composeMail(String sender, String recipient, String subject, String body){
         Mail mail = new Mail(sender, recipient, subject, body);
@@ -52,33 +60,36 @@ public class MailSystem {
             }
         }
     }
-    public void displayInbox(){
-        System.out.println("Inbox: ");
-        for (Mail mail : inbox){
-            System.out.println("To: " +mail.getRecipient());
-            System.out.println("Subject: "+ mail.getSubject());
+    public void displayInbox() {
+        System.out.println("Inbox:");
+        for (int i = 0; i < inbox.size(); i++) {
+            Mail mail = inbox.get(i);
+            System.out.println(i + ". From: " + mail.getSender());
+            System.out.println("Subject: " + mail.getSubject());
             System.out.println("Body: " + mail.getBody());
-            System.out.println("________________________________________");
+            System.out.println("--------------------------------------------");
         }
     }
-        public void displayOutbox(){
-            System.out.println("Outbox: ");
-            for (Mail mail : outbox){
-                System.out.println("To: " + mail.getRecipient());
-                System.out.println("Subject: " + mail.getSubject());
-                System.out.println("Body: " + mail.getBody());
-                System.out.println("_______________________________________");
-            }
+    public void displayOutbox() {
+        System.out.println("Outbox:");
+        for (int i = 0; i < outbox.size(); i++) {
+            Mail mail = outbox.get(i);
+            System.out.println(i + ". To: " + mail.getRecipient());
+            System.out.println("Subject: " + mail.getSubject());
+            System.out.println("Body: " + mail.getBody());
+            System.out.println("-------------------------------------------");
         }
-        public void displaySent(){
-            System.out.println("Sent Mails: ");
-            for (Mail mail : sent){
-                System.out.println("To: " +mail.getRecipient());
-                System.out.println("Subject: "+ mail.getSubject());
-                System.out.println("Body: " + mail.getBody());
-                System.out.println("______________________________________");
-            }
+    }
+    public void displaySent() {
+        System.out.println("Sent Mails:");
+        for (int i = 0; i < sent.size(); i++) {
+            Mail mail = sent.get(i);
+            System.out.println(i + ". To: " + mail.getRecipient());
+            System.out.println("Subject: " + mail.getSubject());
+            System.out.println("Body: " + mail.getBody());
+            System.out.println("-----------------------------------------");
         }
+    }
         public void deleteMailFromInbox(int mailIndex){
         if(mailIndex >= 0 && mailIndex < inbox.size()){
             inbox.remove(mailIndex);
@@ -102,17 +113,6 @@ public class MailSystem {
         }else {
             System.out.println("Invalid mail index.");
         }
-        }
-
-        public User getUser(String username){
-        for (User user : users){
-            if(user.getUsername().equals(username)){
-                return user;
-            }
-        }
-        return null;
-        }
-
-
+    }
 
 }
